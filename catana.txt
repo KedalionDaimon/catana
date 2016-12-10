@@ -1,0 +1,416 @@
+Nino Ivanov
+
+10th December 2016
+
+CATEGORIES AND ANALOGIES
+
+A Set of Experiments on Artificial Intelligence, "Ballistic" Planning, Plan Simulation, Analogies and Categories, and Eliza
+
+
+
+CONTENTS
+
+I. INTRODUCTION AND APOLOGY
+II. WHAT I MEAN BY INTELLIGENCE
+III. DEGREES OF INTELLIGENCE
+IV. SENSORS AND ACTORS
+V. CONCEPTS AND SYMBOLS
+VI. (ABSTRACT) ANALOGIES
+VII. CHALLENGE-RESPONSE LEARNING
+VIII. "PILOTING"
+IX. "BALLISTIC" PLANNING / LACK OF PLANNING
+X. SNOWFLAKE AND SLEDGE
+XI. CATEGORIES
+XII. CATEGORIES PRODUCING ANALOGIES
+XIII. ANALOGIES IN PILOTING SYSTEMS
+XIV. "ETHICS"
+XV. TALK IS CHEAP
+XVI. USAGE
+XVII. HOW TO CRASH
+XVIII. ELIZA
+XIX. "IDIOT" ELIZA
+XX. "STANDARD" ELIZA
+XXI. "MEDIOCRE" ELIZA
+XXII. "CATEGORIZING" ELIZA
+XXIII. LARGE ANALOGY SYSTEM
+XXIV. PILOTING SYSTEM
+XXV. CONCLUSIO
+
+
+
+I. INTRODUCTION AND APOLOGY
+
+This is a combination of a lot of ideas of mine, some old, some new. It is more of a "brain dump" than anything else. It caused me to "go off the grid" for a while as I needed to gain clarity and conduct experiments. I may explore the themes in the future one by one, but I need this as a short note. I am already apologising to my reader for the wild ride which this is going to be. And I assume the reader to be generally acquainted at least superficially with the experiments and approaches I presented so far for achieving general artificial intelligence. As it is a "quick brain dump" my terminology may have suffered, too...
+
+
+
+II. WHAT I MEAN BY INTELLIGENCE
+
+I cannot but repeat: "intelligence", in my understanding of the term, is the ability to react to present challenges by means of responses which are based on past experience.
+
+In biological systems, "intelligence" has the advantage that problems - i.e. situations with inherent peril for an organism - are solved cheaply. If you have a burning bridge and an intact bridge, and need to cross a river - then a "dumb" species like cockroaches may waste thousands of individuals trying "both" and having them burn in the bridge that is on fire, whereas an intelligent species will cross over the intact bridge. - The "dumb" species needs to use up resources (of food) to permanently regenerate the dying individuals. - (On the other hand, the intelligent species needs to keep up the high costs of having a brain even when it is not actively used.)
+
+In machine systems, "intelligence" is not so clearly graspable, as "trying to stay alive" may be a pointless endeavour. E.g. if you want a machine soldier, perhaps the ability to "do a kamikaze" is explicitly desirable. Hence, I am really returning to the basis of the Turing test: intelligent is what appears intelligent to us, i.e. solves problems "as it should".
+
+The underlying aim of any general intelligence is generating replies to problems - and not to SOME category of problems, but to ALL perceivable problems.
+
+
+
+III. DEGREES OF INTELLIGENCE
+
+Intelligence is a gradual thing.
+
+"Not reacting" is the most primitive form of "reaction" innate to dead matter. A stone does not "react".
+
+A "better" form of reaction is "any reaction, even if random". "By chance" at least some of the reactions should be "more or less proper".
+
+"Better" would be to "react always the same way", with mutations only over generations. That would mean that those entities whose reaction is "proper" will "prevail" evolutionarily.
+
+Still better is to "react in a predictable way" - which may lead to "proper" interaction, more variating than a "constant reaction", even within generation limits.
+
+What "a predictable way" is, and how this is ultimately achievable, is what we all aim to find out.
+
+
+
+IV. SENSORS AND ACTORS
+
+Any entity, machine or biological, cannot perceive or act in any other way than with the sensors and actors it is equipped with. If a system simply lacks a sensor, you cannot call it "dumb" for that reason alone. You cannot see infrared, you cannot fly. (You use instruments to replace these abilities which you lack by nature.) But lacking them does not make you "dumb".
+
+All of my experiments herein are done using text, specifically lists of words like (HELLO HOW ARE YOU TODAY Q) - Q  optionally signifying a question mark. This is not limited to language, however. The words could be "movements" of a robot or whatever. A "sentence" should thus be seen just as a section of information (and not as a term focused, necessarily, on "language"). - Of course, as I have mentioned elsewhere, "reflexes", i.e. the automatic transfer of perception into action, are a necessity, and as these ARE "chatbots", after all, I allowed myself to implant them a few reflexes to ease conversation. (It must be borne in mind that although programmatically it makes no difference, the SHEER FACT that you can READ "text" and WRITE THE SAME "text"... is ALREADY a reflexoid translation. A normal human cannot talk with his ears!)
+
+Words are here mere tokens of information. I could use "(x y z)" instead - the symbols do not matter (see below for further elucidation of this).
+
+
+
+V. CONCEPTS AND SYMBOLS
+
+A classic way of working with "concepts" is this: you assume "concepts" have specific "contents" and through specific "relations" these "concepts" relate to other "concepts". Then "thinking" or problem-solving lies in starting from some concepts and following "appropriate" relations to new concepts, until reaching a "solution", i.e. an end-state of concepts which are then output as response. The following of relations and reaching of further concepts can take many "hops", it can contain cycles or not, the concepts and relations may be static or dynamically generated... there are various forms of doing this, "semantic networks" and "frames" being popular (and by some, not even differentiated).  This way, you can "chain" concepts and explore "solutions" to original problems.
+
+The problem to this approach is, "what IS a 'concept' and what RELATIONS does it have?" - Others still actively pursue this, but I myself have given this up pretty much since the beginning of my considerations when I was twelve.
+
+The classic philosophic problem behind it is this: "How can concepts have properties?" - Many people believe they do, and within those who do, there are those who try to differentiate between "core properties" and "accidental properties".
+
+Do birds have fly? - Ask the ostrich. But birds at least have wings, right? - Well, ask the kiwi. Worse it is with plants when you compare a water-lilly with a desert cactus.
+
+I found that approach unfitting. Even IF this were somehow describable, I would not be able to do it in my life-time.
+
+Instead, I saw it this way: a "property" is in reality ITSELF a concept. "Having wings" is a concept, not just a property of birds. "Relations" can be concepts, too, e.g. "birds attacks worm" can itself be seen as a concept. So you could say, instead of "concepts have properties and relations", simply "concepts are connected to other concepts". A "bird" can be connected to "bird attacks worm", which itself can be connected to "worm" - instead of saying, a "bird" has a property of "attack", and has a "bird-attacks"-relation to the concept "worm".
+
+This entailed a great simplification: the CONTENTS of any symbol no longer matter. It no longer matters "what a bird IS". A "bird" no longer has PROPERTIES. A "bird" could be referred to as an "X" or as an "avis", it does not matter how you call it, as its name is unimportant. It has no "content". It is a PURE SYMBOL, signifying the relation to other symbols.
+
+This has been the basis of all my research and systems so far, no matter how they worked. The "symbols" come through the sensors, and to figure out their "relations" was the task of the respective system.
+
+
+
+VI. (ABSTRACT) ANALOGIES
+
+Now that there are only "concepts" and "relations", one can make the hypothesis that in "X-Y-Z-A-Q-R-S" and "X-Y-Z-B-Q-R-S" somehow A and B are used instead of each other (presumed is that "X", "Y", etc. are symbols and "-" is a relation between them). I call this an (abstract) "analogy". "Coffee" and "tea" can be analogous, because they are "so similar". But also "reward" and "punishment", as you will get either the one or the other. - This notion of replaceability I sometimes make apparent by an extra analogy relation, and sometimes I am merely implying it in the general setup of the system.
+
+The clearest expression of analogy and the connections between symbols can be found in my theory of logical triangulation, as there, analogies and vicinities between symbols are treated in the same manner. This is my "most correct" system, but unfortunately, my "least quickly performing" one, too.
+
+
+
+VII. CHALLENGE-RESPONSE LEARNING
+
+As outlined previously, one way to find out what to say to the world is by observing "how things are answered within the the outer world". I.e. when the system gives an output to the outer world, it then learns how the outer world replies to the system. It uses a reply of the same style, then, when a "similar" challenge comes. (And to determine "similarity", explicitly (ana-relations in Logical Triangulation) or implicitly (fragmentation-sets in my pattern-matching approaches, or vector comparisons) analogies are used.
+
+
+
+VIII. "PILOTING"
+
+Challenge-response learning with patterns, as presented so far, has one issue: the replies are not variated. If the system learns (HELLO HOW ARE YOU TODAY) is being answered by (VERY WELL AND HOW ARE YOU TODAY), it will deliver exactly this very reply. This is not "wrong" - simply, the minimal reply entity is set to "a whole sentence". This even has the advantage that the answer will always "look normally" (instead of a lot of the trash sentences which ELIZA tends to produce).
+
+But if you wish to "set the detail lower", this solution becomes unsatisfactory. If you say (HELLO HOW WERE YOU YESTERDAY) you might not wish (VERY WELL AND HOW ARE YOU TODAY), but perhaps rather (VERY WELL AND HOW WERE YOU YESTERDAY). What can be done about this?
+
+As will be presented later, you can produce a reply in MANY steps rather than in ONE step. I call this process "piloting" (ignoring the possible terminology of others before me and ignoring any relation to Markov chains, without either affirming or denying "what others have said about similar things" as I simply tend to ignore the work of others presently. Without meaning it in any way disrespectfully, NONE of the has a general AI, so I am not going to imitate that what leads to no success.).
+
+E.g. the alphabet could be produced in "while parts", e.g. to "challenge" with (A B C D E F G) and to "reply" with (H I J K L M N O P Q R S T U V W X Y Z). Instead, this could be done stepwise with a "shifting challenge window", each time incorporating the reply. E.g. the challenge (A B C D E F G) could produce "H", then H is recorded; then (B C D E F G H), using the found reply, can produce "I"; then (C D E F G H I) produces "J"; then (D E F G H I J) produces "K" ... and so forth. At "Z", this process could terminate and the system could output (H I J K L M N O P Q R S T U V W X Y Z) as a reply collected over multiple steps.
+
+What would be the advantage of it?
+
+- Well, the greater granularity. You could say, "[A B C D]" produces "E", but [A B V G] produces "D". If the perceived challenge is [A B X D], you will go with "E" as the greater similarity is to [A B C D]. If the perceived challenge is [A B V X], you will go with "D" for [A B V G]. (If the perceived challenge is [A B V D], then the challenge is ambiguous and you will need conflict resolution assumptions).
+
+This way, you can generate flexible responses. So if the system could solve (HELLO HOW WERE YOU YESTERDAY) as follows, assuming "[fragment]->consequence/generated reply":
+
+[HELLO HOW WERE YOU YESTERDAY]->VERY/(VERY)
+[HOW WERE YOU YESTERDAY VERY]->WELL/(VERY WELL) 
+[WERE YOU YESTERDAY VERY WELL]->AND/(VERY WELL AND)
+[YOU YESTERDAY VERY WELL AND]->HOW/(VERY WELL AND HOW)
+[YESTERDAY VERY WELL AND HOW]->WERE/(VERY WELL AND HOW WERE)
+[VERY WELL AND HOW WERE]->YOU/(VERY WELL AND HOW WERE YOU)
+[WELL AND HOW WERE YOU]->YESTERDAY/(VERY WELL AND HOW WERE YOU YESTERDAY)
+
+- and then deliver (VERY WELL AND HOW WERE YOU YESTERDAY) as reply.
+
+I already have such systems and shall present them.
+
+Their advantage is in the flexibility of generating replies as they only follow a "corridor" of concepts and see "which concept comes next". - As to "how long the corridor shall be", well, this is so far not an exact science. I say... between 4-6 words already works very nicely. And for matching it, you use "exact vector positions" instead of fragmentation sets, as fragmentation sets do not adequately capture the "progression" along the answers.
+
+Learning can be done like this: if the sentence (I AM HAVING AN ABSOLUTELY GREAT DAY) is perceived and the length of the "corridor" is 4, the system could learn:
+[I AM HAVING AN]->ABSOLUTELY
+[AM HAVING AN ABSOLUTELY]->GREAT
+[HAVING AN ABSOLUTELY GREAT]->DAY
+
+Piloting IMPLIES analogies. If a challenge would be (HAVING AN ABSOLUTELY WONDERFUL), then the continuation is "DAY", because the challenge is "similar" to [HAVING AN ABSOLUTELY GREAT].
+
+
+
+IX. "BALLISTIC" PLANNING / LACK OF PLANNING
+
+A pervading property of all my systems is that they ALL lack specific "plan search mechanisms". They DO NOT work like, e.g., a chess program which analyses "branches" of possible "actions".
+
+Instead, I say a "plan" - even for a human - is nothing else than "internal knowledge" applied to a given situation. The knowledge may be experienced by sensors or generated analytically. But a plan is no different from any and all other conclusions which a mind does. A mind does not need to "plan". A mind needs to "analyse a problem". The analysis itself, if done properly, should, as a "byproduct", produce a "plan". With my systems, "plans" are not made - certainly not in a way "to see the present, simulate the future and select the best outcome". (This would be wasteful: all the "failed" plans would be forgotten! In reality, "simulated failed plans" are an important source of knowledge, too!)
+
+Instead, my system generate replies out of their general knowledge. They seek the present as a "problem" within the knowledge. If a similar problem is found, its reply is output (in Logical Triangulation - following a vic-relation; in fragmentation sets and challenge-reply-learning - the reply; in "piloting" systems - the sequence of responses, following the sliding problem window and the responses prepared so far). I am jokingly calling it "ballistic" planning, as the future depends fully on the past. The future is not "planned". It is like a ball which has been thrown and simply follows along its trajectory.
+
+What if "something unforeseen happens"? - I do not even bother with such questions - NOTHING is "unforeseen" or "foreseen". Either a solution is known, or not - and if it is known, it is presented. Something "surprising" here is merely something to which little or no knowledge is fitting (prompting, worst case, a default reply).
+
+To improve precision in finding a reply, my systems often contain a "history" of the last several interactions, and it is this "history" or "context" to which a reply is sought. (In a way, this is just a variation of the "piloting" idea above.) "History" is a sort of "situational memory", e.g. instead of asking "What follows ( G H I)?" the question would rather be, "What follows (A B C) (D E F) (G H I)?" and this has a much more unquestionable reply.
+
+
+
+X. SNOWFLAKE AND SLEDGE
+
+Do you always have to blurt out a reply immediately based on the knowledge base, instinctively, without further consideration?
+
+No, not necessarily. - There is a way to implement "deeper thinking" by two processes which I call a "snowflake" and a "sledge". They both aim for one thing: enriching the knowledge base with more experience about a "current" problem ere selecting an element of the knowledge base in order to produce a reply. This is done by "simulating" replies and "simulating" the conversation. This "simulation" is NOT presented to the outer world, BUT experience is gained from it as if it were "reality". This experience modifies the knowledge base. This modified knowledge base has then made the system "smarter" as it now has "more (internal) experience" for answering a given situation, so its answer is presumably "better".
+
+How it works:
+
+"Sledge":
+
+When the human says "(A B C)", the system could reply (D E F) immediately. INSTEAD, the system can FORGO outputting (D E F) as reply. Instead, it can RE-INPUT TO ITSELF (D E F) as the next challenge. This way, the system can "simulate" or "glide along" (hence: "sledge") the hypothetical conversation, like (A B C) -> (D E F) -> (G H I) ->... - What is interesting about it, is that this way, the system can make use of analogies. Perhaps it has no idea how to answer (D E F), but it knows that (D X F) -> (G H I). It can then "learn" that (D E F) is similar to (D X F) and that (D E F) should ALSO lead to (G H I). This process serves generating "replies by analogy". It alone is actually sufficient to improve the knowledge base.
+
+"Snowflake":
+
+The sledge leads the system along far-fetched lines of reasoning, but perhaps you want it to consider the problem given HERE AND NOW with more focus. So after you let the system reason on (A B C) -> (D E F) -> (G H I) -> (J K L)... you may AGAIN ask the system to answer the problem (A B C). As the knowledge base will have been changed by the sledge, the snow-flake may on the second try gain different answers than the first time. These different answers can again be pursued with a "sledge" into a hypothetical conversation. 
+
+So after you ask sufficiently many times (i.e. with a certain "breadth") the problem (A B C) and allow the system to re-create sledges along hypothetical conversations (up to a certain "depth"), you can END the "simulation" of the replies and simply give out a REAL reply to the outer world.
+
+(I admit, I am sometimes switching their names in my codes. It is a bad habit. But anyway, when you see it, this is what it is all about: re-simulating again and again up to a certain depth the hypothetical future. This enriches the knowledge and contributes to it. A "plan" can thus be constructed more easily... but this is still not "planning", as the system does not "aim to reach a goal", but merely "checks out likely developments and remembers them all, whether they be 'good' or 'bad'".)
+
+TASK: TURN OFF THE ANALOGY REPLACEMENTS IN THE PILOTING MECHANISM - SHOW HOW IT CAN BE USED STAND-ALONE.
+
+
+
+XI. CATEGORIES
+
+Not going the road of conceptual graphs, "categories" were so far of little importance to me. After all, what do I care about "categories" of concepts, if "categories" are indeed just "collections of things based on properties" - and I do not believe in a necessity of "properties" in the first place?
+
+This changed a bit in the last few weeks. I really tried to understand the "category people" and to reconcile their approach with my approaches (which are mainly "pattern-based").
+
+A category can be seen as a "pattern group". Instead of looking at the patterns (A B C), (A B X), (A Y B), etc., one can say "the category which contains mainly A and B". Thus, the "knowledge" about the patterns can be SIMPLIFIED and UNIFIED. E.g. every time I use (A B C), (A B X) and (A Y B) I can replace this with (CategoryAB). This REDUCES knowledge, as less variances are known. Less of a pattern is seen, less fine points are realized. But if such "fine points" are seen as "clutter", then reasoning with "categories" may actually ACCELERATE reasoning and GENERALIZE conclusions. Therein I see the trade-off to patterns: less precision for categories, but easier "broad" reasoning and easier "recognition".
+
+A "category" thus still has one main problem: SPECIFICALLY, what IS e.g. a "bird"? - Currently, I am thinking you still need an "imago", an actual image of something concrete, in order to use a category. If you know that you shall deliver "a bird" for dinner, you will have to bring "a chicken" or "a goose" or "a duck" or "a dove" etc.
+
+I have therefore developed an experimental system which is using "categorical fragments" instead of a "full fragmentation set" in order to represent problems. If the known pattern is (A B C D E F G H I), then it may just try to match [A-B-C, F-G], instead of a full fragmentation set. It is thus "focusing matching" (onto the "category properties" and not "every piece of the pattern"] and also "facilitating reasoning" - as it is less difficult to match [A-B-C, F-G], such knowledge may easier participate in the "snowflake and sledge"-mechanism described above when simulating replies.
+
+
+
+XII. CATEGORIES PRODUCING ANALOGIES
+
+"Categories" also help find "analogies" and vice versa. Particularly easy it is to show in challenge-reply-pairs based on whole sentences (as opposed to the described "piloting" approach). The simple matter is, if you do "categories" then you try to "group things" in a "clear way". That happens if you match things by their "unique properties". "Something white that has wings" will contain a lot of geese and chicken, but no strawberries. Therefore, instead of look at "every possible sub-pattern" in a given perception pattern, there could be looked at "the segments of that pattern that have been seen elsewhere". E.g. instead of looking at (A B C D E F G H I) and all its sub-chains, you may just look at [A-B-C, F-G] (and, possibly, their sub-chains). The rest "has not been matched". - So the rest is not "part of the well-known category properties". Rather, the rest is... analogous. If you have a present problem (A B C D E F G H) and match it onto the known element (A B C X Y F G H), then you may conclude that the category is really [A-B-C, F-G-H] and that [D-E] is (abstractly) ANALOGOUS to [X-Y].
+
+Indeed, you may conclude that [D-E] HAS REPLACED [X-Y] in the above example. If concluding from the "experience" to the "norm" (as odious as it appears to some people, I find that a CORRECT way of reasoning), you may also say that [D-E] SHOULD replace [X-Y] in the future, too. So if the known challenge-reply pair is (A B C X Y F G H)->(U V W X Y Z), you may now use the found analogy knowledge to MODIFY that reply. You may say, it should be now (U V W D E Z) - replacing [X-Y] with [D-E].
+
+This can lead to more granular or "proper" replies, especially with sentence-based challenge-reply pairs. (A simplification could even be: if anywhere a series is of n elements is discovered, and only m differ, then analogy is to be assumed between those differing elements. E.g. within the series (A B C X E Y G H I J) and (A B C D E F G H I J), you can say that within five elements at least three must be the same. Then you can say, due to B-C-[different]-E-[different], five elements are matched, three are the same, and X must be analogous to D and Y must be analogous to F.)
+
+Obviously, over repeated reasoning due to sledge & snowflake, an arbitrary number of analogies can be found and replaced, and the reply can be arbitrarily fine-tuned.
+
+This really matches nicely into "challenge-reply pairs" which are sentence-based, but how about the "piloting" approach?
+
+Keeping around "known analogy replacements" improves the "situational awareness" of a system and how it treats "context".
+
+
+
+XIII. ANALOGIES IN PILOTING SYSTEMS
+
+The easiest and most obvious thing to say is that if you encounter [A B C D] -> C and [A B X D] -> X, then obviously you should memorize [A B some-thing D] -> the-same-thing. This approach, indeed, would work. But it would work in a very narrow way, it would need great locality of the information. It is an "explicit" analogy, but has barely any advantage over "pure" piloting, which solely "implies" analogies. It is simply not worth the effort in my eyes.
+
+Instead, I went down another road.
+
+E.g. [K L M N] -> O means that EACH of the elements (if you care: in its current position) is pointing to "O".
+
+This can be decomposed into [K . . .] -> O, [. L . .] -> O, [. . M . ] -> O and [. . . N] -> O.
+
+Perhaps before that, [K . . .] -> P and [. . M .] -> Q (for instance in [K I J H]->P and [Z Z M Z] -> Q). But now, instead they point to Q. - Then, the "analogy" can be concluded that "O" is analogous to P and Q and is actually replacing them. This could be signified e.g. as {O : P Q}. Really, there can be MANY "known replacements", so it could really be {O : P Q F A Y ...}.
+
+This knowledge could be used in such a way that if e.g. "P" is encountered, it shall be REPLACED by "O" in the future, too.
+
+(The details of "exactly how" this is done are likely implementation-dependent. I use an idea of "special" and "general" categories. If you e.g. say that you again observe (K I J H) and wish to continue it. Then [K I J H] -> P would be the "normal" solution. This, I say, is the "general category", and the answer is "P". P is, however, only used if there is no "more special" category which would replace it. as now has been learned that [K . . . ] -> O, then K is actually such a more special category, so the answer to [K I J H] is transformed from "P" into "O".)
+
+(When it is concluded that "O" replaces "P", but then later that "P" replaces "O", then this latter circumstance should neutralize or change the former rule - a "loop" makes no sense at all, either something IS replaceable or NOT.)
+
+Using such a mechanism, I would have a system which is not only flexible - but also exceptionally (albeit: strictly speaking, unnecessarily) "creative" with its answers.
+
+If developed further, such systems may be better "fitting" to present problems in a faster way than systems which do not use analogy.
+
+
+
+XIV. "ETHICS"
+
+I don't give a damn about AI ethics. - Now if you call me "unethical", then I am all the more pursuing a "machine in my own image", right?
+
+
+
+XV. TALK IS CHEAP
+
+Well... what now?
+
+I babbled your mind full of "philosophical ideas" as to how thinking may be "mechanized", if I am permitted to use this charming idiom from the 1950s.
+
+So therefore please find below links to a few implementations relating to the things I mentioned above.
+
+
+
+XVI. USAGE
+
+To run any of the programs, simply start your Lisp (for the Elizas) or Scheme (for the rest) interpreters and run:
+
+(load "whateverfile.name")
+
+- then simply enter "(some sort of list)" in order to converse with the respective system.
+
+
+
+XVII. HOW TO CRASH
+
+Letting a system presented below "crash" may be interesting as you can have a look at the variables, e.g. without writing a data file. To crash it, give it a "symbol" instead of a "list" as input. E.g. just say "x" instead of "(x)" as input.
+
+
+
+XVIII. ELIZA
+
+"Eliza" was a famous chatbot in 1966 which worked this way: it checked the human input sentence for certain "keywords". Once it found a keyword, it would tell you a sentence connected to this keyword. Eliza did not learn new keywords or sentences. E.g. if Eliza found "father", as in "Yesterday I met father for lunch.", Eliza may answer you the pre-defined response for "father", e.g. "Did you have a happy childhood?"
+
+The experiments regarding such chat-bots go back much earlier to at least the early 1950s, if not earlier. (So: no, Eliza is *not* the "first chatbot".)
+
+As limited as Eliza quickly appears, as much did I used to be fascinated with "her" as a kid. So I set out to explore what can be "more" and what can be "less" intelligent than Eliza. - This actually set in motion my considerations on "categories" which you read above and I created a few implementations exploring various themes.
+
+I created the following Elizas (or "Elisas"; in an ancient Lisp for a 40-column-display machine, don't ask... the code looks a bit awful for foreign eyes). They are not conforming to the "original" Eliza's idea, as they can be less or more capable.
+
+
+
+XIX. "IDIOT" ELIZA
+
+What would be more primitive than a chat-bot which only seeks keywords in sentences?
+
+- A "chat-bot" which doesn't. So I made the following experiments which
+
+(i) - only output ONE AND THE SAME THING; and
+
+(ii) - output a series of replies to the user WITHOUT REGARD to the input.
+
+HOW TO RUN: The systems are the Lisp files "IDIOT.LSP" and "IGNORANT.LSP". They save no data and are plainly annoying. For sample interactions, see "IDIOT.PNG" and "IGNORANT.PNG".
+
+
+
+XX. "STANDARD" ELIZA
+
+For the giggles, I programmed an extremely simplistic version of "classic" Eliza which only tries to match a word and tell you a reply. This is the "standard" approach of Eliza. (I left out the sentence-transformation functions, it is now just keyword based.) It learns nothing new, but it can "drive" a conversation. As it is capable of solving problems, I call this standard version... somewhat intelligent. OK, it does not learn and that is a serious weakness. But lurking for keywords is itself an ability, is it not?
+
+HOW TO RUN: The system has only one Lisp file, namely "MINICHAT.LSP". It saves no data. For sample interactions, see "MINICHAT.PNG".
+
+
+
+XXI. "MEDIOCRE" ELIZA
+
+For the next step, I said Eliza shall not repeat itself all that much. This is the first version which "learns". It tries to match a keyword, but IF said keyword has been recognized too recently, then ANOTHER keyword is sought. In keeping track of "what NOT to say", I am calling it a "learning" chatbot. (Of course, it learns neither new answers, nor new ways to use answers.)
+
+HOW TO RUN: The system has only one Lisp file, namely "MIDICHAT.LSP". It saves no data. For sample interactions, see "MIDICHAT.PNG".
+
+
+
+XXII. "CATEGORIZING" ELIZA
+
+The answers of Eliza are pre-set by design, but perhaps she can learn more keywords?
+
+It dawned on me that the VERY DESIGN of Eliza implies something interesting: ALL words in any challenge sentence to Eliza are deemed ANALOGOUS. This may appear a priori as pretty counter-intuitive, but it is a consequence of the fact that Eliza matches "any keyword", does not really care about the "structure" of the dialogue.
+
+If you say "Yesterday I met father for lunch", then each of "yesterday", "I", "met", "father", "for" and "lunch" are going to "share the same fate" as for ALL of them, Eliza will give the same reply. From this, you can make a conclusion: If "lunch" and "father" are analogous, as they have the same consequence... then consequences can be learned for words which so far had NO known consequences. In other words, Eliza can be made to learn new keywords and "inherit" to them the already known replies to other keywords.
+
+Suppose "father" has a known consequence, but lunch does not. In this case, Eliza could reply you next time it sees "lunch" (even without "father") with the reply meant originally for catching the keyword "father". E.g. You: "I had a nice lunch today.", Eliza: "Did you have a happy childhood?" - You see, it may be a somewhat strange reply, but it is still the best it can give you under the circumstances and is not "totally random".
+
+So in which category should e.g. "lunch" really be? - Should it be with "father"? Or somewhere else?
+
+As categories should aid in discriminating information, the real answer is: it does not matter in WHICH category, as long as it is predominantly or only in ONE category. It should be clear which answer should be given. Indeed, I say that every pre-programmed "answer" is to be seen as one category - and "keywords" shall be uniquely grouped to each category, so that each category has its own, unique set of keywords which are NOT (greatly) "overlapping" with any other category's keywords. If you see any known keyword, the reply should be immediately known.
+
+So I created a "categorizing" Eliza which reads input sentences and "learns" new words for the "category" of each reply. - This Eliza is still simpler than any "real" system as she does not attribute importance to sentence structure at all - she is still merely "fishing for keywords".
+
+HOW TO RUN: The system has only one Lisp file, namely "ELISALRN.LSP". It saves no data. For sample interactions, see "ELISALRN.PNG".
+
+
+
+XXIII. LARGE ANALOGY SYSTEM
+
+After considering how the last "categorizing" Eliza could "learn", that is, attribute answers to grouped keywords, I was wondering whether I can use categories in challenge-reply learning. The system named "largeana-file.scm" (or "largeana") explores the possibility of challenge-response learning with analogy replacements, too.
+
+It has two main functions: "(extract-single-analogies knownfragment newfragment)" to extract analogies (a development of the function "(anaflanker lis1 lis2)", which determines where two lists overlap in such a way that you can determine there an analogy); and "(docking-points newsentence knownsentence)" to select in which points two sequences have been mostly matching, i.e. the "categorical properties" of these sequences.
+
+Largeana has only one data file where the knowledge is structured into groups of four fields. Before anything is learned, the four fields just look like "(() () () ())". This originally simple data structure can grow into something rather involved, e.g. "((you wish to see me learn you wish to see my mind unfolding) (i-wish-to-teach-you- i-wish-to-teach- wish-to-teach-you- i-wish-to- wish-to-teach- to-teach-you- i-wish- wish-to- to-teach- teach-you- i- wish- to- teach- you- you-wish-to-see-me- you-wish-to-see- wish-to-see-me- you-wish-to- wish-to-see- to-see-me- you-wish- wish-to- to-see- see-me- you- wish- to- see- me- i-wish-to-teach-you- i-wish-to-teach- wish-to-teach-you- i-wish-to- wish-to-teach- to-teach-you- i-wish- wish-to- to-teach- teach-you- i- wish- to- teach- you- learn-you-wish-to-see- learn-you-wish-to- you-wish-to-see- learn-you-wish- you-wish-to- wish-to-see- learn-you- you-wish- wish-to- to-see- learn- you- wish- to- see-) (((see me learn) (teach)) ((me learn you) (i)) ((wish to see) (and)) ((see my mind) (teach)) ((me learn) (to teach)) ((learn you) (i)) ((learn) (wish to teach)) ((wish) (and i hope)) ((you) (i)) ((see) (teach you and))) (i want to know what happens with you when you are left to your devices))". Let us decompose this and look at the parts.
+
+The first part is e.g. "(you wish to see me learn you wish to see my mind unfolding)". This, classically, would be the "challenge". In this system, this is the "imago" of the challenge, i.e. its exact representation in reality. Here, this is however NOT what the system uses to "match" this pattern. The imago is only used for adjusting categorization.
+
+The second part is a fragmentation set, but NOT on the "whole pattern". Instead, it only relates to "category matches". E.g. it looks like "(i-wish-to-teach-you- i-wish-to-teach- wish-to-teach-you- i-wish-to- wish-to-teach- to-teach-you- i-wish- wish-to- to-teach- teach-you- i- wish- to- teach- you- you-wish-to-see-me- you-wish-to-see- wish-to-see-me- you-wish-to- wish-to-see- to-see-me- you-wish- wish-to- to-see- see-me- you- wish- to- see- me- i-wish-to-teach-you- i-wish-to-teach- wish-to-teach-you- i-wish-to- wish-to-teach- to-teach-you- i-wish- wish-to- to-teach- teach-you- i- wish- to- teach- you- learn-you-wish-to-see- learn-you-wish-to- you-wish-to-see- learn-you-wish- you-wish-to- wish-to-see- learn-you- you-wish- wish-to- to-see- learn- you- wish- to- see-)"
+
+To generate this fragmentation set, the following function is used - I am mentioning it here as I found it generally quite interesting to have it:
+
+(define (list-to-symbol somelist)
+  (map string->symbol
+    (map (lambda (w) (apply string-append w))
+      (map (lambda (x) (map (lambda (y) (string-append y "-")) x))
+        (map (lambda (z) (map symbol->string z)) somelist)))))
+; (list-to-symbol '((A) (BB C) (DD EE FFF) (G H)))
+; --> (A- BB-C- DD-EE-FFF- G-H-)
+
+- basically, it turns a depth-two-list (i.e. a list of lists) into a list of symbols.
+
+The second part, the fragmentation set of "category properties", is what is used for matching knowledge in the largeana system.
+
+The third part signifies analogy replacements. When a bit developed, it looks like this: "(((see me learn) (teach)) ((me learn you) (i)) ((wish to see) (and)) ((see my mind) (teach)) ((me learn) (to teach)) ((learn you) (i)) ((learn) (wish to teach)) ((wish) (and i hope)) ((you) (i)) ((see) (teach you and)))". This means that "see me learn" will replace "teach", that "me learn you" will replace "i", that "wish to see" will replace "and", and so forth.
+
+The fourth part, finally, is the answer (as originally learned - still without regard to analogy replacements. E.g. the reply here should be: "(i want to know what happens with you when you are left to your devices))". This is what the machine will try to adjust by analogies (i.e. the third part) if the second part - i.e. the fragmentation set of the category properties  is matched. (Upon matching, the second part will be adjusted with the help of the first part.)
+
+HOW TO RUN:
+
+The file to load in a Scheme interpreter is "largeana-file.scm". The file largeana.txt should be in the same directory. You can copy largeana.orig to largeana.txt, overwriting the latter, in order to get a "clean start from zero knowledge", if desired. The file "largeana1.png" shows you a sample interaction; the file "largeana2.png" shows you the data file "largeana.txt" after a little bit of conversation.
+
+FILE LIST:
+
+largeana-file.scm largeana.orig largeana.txt largeana1.png largeana2.png
+
+
+
+XXIV. PILOTING SYSTEM
+
+After it was clear how to do analogy replacements in a sentence-based challenge-reply-learning system, I wanted to do things more fine-grained in a "piloting" system.
+
+The system named "pilots-file.scm" (or "pilots") is depending on two files "pilots1.txt" and "pilots2.txt" (which are saved in pristine form under the *.orig type - simply copy *.orig to *.txt to reset the knowledge). Thereby, "pilots1.txt" contains the "piloting" vectors, whereas "pilots2.txt" contains the analogy replacements.
+
+Pilots originally contains structures in the form of "((you will you eventually learn the) language)" in pilots1.txt. These are six elements pointing to a seventh. Before any knowledge has been collected, this structure looks like this: "((() () () () () ()) ())"; beware that () itself means "termination of sentence", so something like ((a b c d e f) ()) would mean "shut up after telling f".
+
+The analogies are handled in pilots2.txt and originally appear like "(() (()))", i.e. () replacing only (), which is a "no operation" equivalent. Later on, the analogy replacement structure may look like this: "(strange (yes wonder happens what tell develop will to))" - i.e. "strange" is replacing "yes", "wonder", "happens", etc.
+
+() is a special symbol, too - it signifies sentence termination.
+
+In general, you just freely talk with pilots (over lists) and it should learn all by itself. When you are fed up, issues "()" and it will terminate, saving to file the last knowledge status.
+
+HOW TO RUN:
+
+The file to load in a Scheme interpreter is "pilots-file.scm". The files pilots1.txt and pilots2.txt should be in the same directory. You can copy pilots1.orig to pilots1.txt and pilots2.orig to pilots2.txt, overwriting them, in order to get a "clean start from zero knowledge". The file "pilots1.png" shows you a sample interaction; the file "pilots2.png" shows you a the data file "pilots1.txt" after a little bit of conversation (the "piloting" part); the file "pilots3.png" shows you the data file "pilots2.txt" after a bit of conversation, too (the "analogy replacement" part).
+
+FILE LIST:
+
+pilots-file.scm pilots1.orig pilots1.txt pilots2.orig pilots2.txt pilots1.png pilots2.png pilots3.png
+
+
+
+XXV. CONCLUSIO
+
+Albeit further improvement and polish can be envisioned for the above systems, they are already working. And yes, the largeana system and the piloting system you can actually start learning "from zero". They demonstrate how "thinking" may be achieved in particular using analogies and categories. I hope you have found this unfiltered view of these ideas enjoyable.
+
+Have fun with the experiments!
+
+
+
+
